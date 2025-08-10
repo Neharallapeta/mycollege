@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz Results</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f0f4f8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .result-box {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      width: 500px;
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .score {
+      font-size: 24px;
+      color: #007BFF;
+      margin-bottom: 20px;
+    }
+    .feedback {
+      font-size: 18px;
+      color: #555;
+      margin-bottom: 30px;
+    }
+    ul {
+      text-align: left;
+      padding-left: 0;
+      list-style: none;
+    }
+    li {
+      margin-bottom: 10px;
+      background: #f9f9f9;
+      padding: 10px;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <div class="result-box">
+    <h2>Your Quiz Results</h2>
+    <div class="score" id="scoreDisplay">Score: 0/10</div>
+    <div class="feedback" id="feedbackText">Feedback goes here.</div>
+    <h3>Correct Answers:</h3>
+    <ul id="answerList">
+      <li>1. Hyper Text Markup Language</li>
+      <li>2. Tim Berners-Lee</li>
+      <li>3. &lt;br&gt;</li>
+      <li>4. &lt;a&gt;</li>
+      <li>5. &lt;body style="background-color:yellow;"&gt;</li>
+      <li>6. &lt;img&gt;</li>
+      <li>7. &lt;ol&gt;</li>
+      <li>8. &lt;tr&gt;</li>
+      <li>9. Metadata and links to scripts/styles</li>
+      <li>10. &lt;select&gt;</li>
+    </ul>
+  </div>
+
+  <script>
+    // Simulated score (replace with actual logic if needed)
+    const score = 7; // Example score
+    document.getElementById("scoreDisplay").textContent = `Score: ${score}/10`;
+
+    let feedback = "";
+    if (score === 10) {
+      feedback = "Perfect! You're an HTML master. 🎉";
+    } else if (score >= 7) {
+      feedback = "Great job! You know your HTML well. 👍";
+    } else if (score >= 4) {
+      feedback = "Not bad, but there's room to improve. 📘";
+    } else {
+      feedback = "Keep learning! HTML is the foundation of the web. 💡";
+    }
+
+    document.getElementById("feedbackText").textContent = feedback;
+  </script>
+</body>
+</html>
